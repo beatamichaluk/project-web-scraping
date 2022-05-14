@@ -1,4 +1,4 @@
-# Web Scraping - Polish national footbal players
+# Web Scraping - Polish national football players
 
 ## Table of contents
 * [General info](#general-info)
