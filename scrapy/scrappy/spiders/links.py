@@ -1,5 +1,6 @@
 import scrapy
 
+#Creating class for links from homepage
 class Link(scrapy.Item):
     link = scrapy.Field()
 
@@ -8,6 +9,7 @@ class LinkListsSpider(scrapy.Spider):
     allowed_domains = ['http://www.hppn.pl']
     start_urls = ['http://www.hppn.pl/reprezentacja/pilkarze']
 
+#Parse function which extract links for every page
     def parse(self, response):
         xpath = '/html/body/div[2]/div[1]/div[2]/div[2]/div[2]/section/div[2]/div[2]/table[1]/tbody/tr/td[2]/a/@href'
         selection = response.xpath(xpath)
