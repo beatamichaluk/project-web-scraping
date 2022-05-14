@@ -1,3 +1,4 @@
+#Libraries
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
@@ -7,7 +8,7 @@ import datetime
 import pandas as pd
 import csv
 
-# Init:
+#GeckoDriver path
 gecko_path = '/usr/bin/geckodriver'
 ser = Service(gecko_path)
 #options = webdriver.Firefox.options.Options()
@@ -24,7 +25,8 @@ minuty_rozegrane = []
 
 url = 'http://www.hppn.pl/reprezentacja/pilkarze'
 
-# Actual program:
+### Here we have actual program ###
+
 driver.get(url)
 
 driver.implicitly_wait(6)
@@ -43,11 +45,12 @@ while Limit == True:
 print("program will scrap 100 pages")
 limit = 0
 for links in linki1:
-if limit == 4:
+if limit == 100:
 break
 driver.get(links)
 driver.implicitly_wait(3)
 
+#xpaths to players characteristics
 players = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/section[1]/div[1]/div[2]')
 matches = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[2]/td[2]')
 goals = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[4]/td[2]')
