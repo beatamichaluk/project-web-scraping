@@ -21,7 +21,7 @@ Limit = True
 linki1 = []
 imie_nazwisko = []
 mecze = []
-bramki = []
+mecze_na_ławce = []
 minuty_rozegrane = []
 
 url = 'http://www.hppn.pl/reprezentacja/pilkarze'
@@ -56,16 +56,16 @@ driver.implicitly_wait(3)
 #xpaths to players characteristics
 players = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/section[1]/div[1]/div[2]')
 matches = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[2]/td[2]')
-goals = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[4]/td[2]')
+bench = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[4]/td[2]')
 minutes = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[1]/td[2]')
 
 #Creating list
 for i in range(len(players)):
 imie_nazwisko.append(players[i].text)
 try:
-bramki.append(goals[i].text)
+mecze_na_ławce.append(bench[i].text)
 except:
-bramki.append(" ")
+mecze_na_ławce.append(" ")
 try:
 mecze.append(matches[i].text)
 except:
@@ -77,7 +77,7 @@ minuty_rozegrane.append(" ")
 
 limit += 1
 
-df = pd.DataFrame(list(zip(imie_nazwisko,bramki,minuty_rozegrane,mecze)), columns = ['Name_Surname','Goals','Minutes','Matches'])
+df = pd.DataFrame(list(zip(imie_nazwisko,mecze_na_ławce,minuty_rozegrane,mecze)), columns = ['Name_Surname','Goals','Minutes','Matches'])
 
 df.to_csv('Table.csv', sep=';')
 
