@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-The theme of the work below is the Polish national soccer team. The goal of the project was to extract links to pages about each player and then extract some data about each player. Each tool was supposed to extract the same links and information. This project contains code to scrape pages using Python and thress different libraries and frameworks - Beautiful Soup, Scrapy and Selenium. 
+The theme of the work is the Polish national soccer team. The page that was scraped is http://www.hppn.pl/reprezentacja/pilkarze. The goal of the project was to extract links to pages about each player and then extract some data about each player. Each tool was supposed to extract the same links and information. This project contains code to scrape pages using Python and thress different libraries and frameworks - Beautiful Soup, Scrapy and Selenium. 
 	
 ## Technologies
 Project is created with:
