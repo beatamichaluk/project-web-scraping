@@ -17,5 +17,7 @@ Project is created with:
 	
 ## Setup
 To run this code, first of all you need to install Beautiful Soup, Scrapy and Selenium. 
+
+
 ! If you want to find codes for Scrapy go to ->>  project-web-scraping/scrapy/scrappy/spiders/
 
