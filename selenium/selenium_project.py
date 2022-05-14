@@ -15,6 +15,7 @@ ser = Service(gecko_path)
 #options.headless = False
 driver = webdriver.Firefox(service=ser) #options = options
 
+#Boolean parameter limiting number of pages
 Limit = True
 
 linki1 = []
