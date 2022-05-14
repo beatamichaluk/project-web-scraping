@@ -31,9 +31,11 @@ driver.get(url)
 
 driver.implicitly_wait(6)
 
+#Code to click on 'Cookie buttom'
 cookies = driver.find_element(By.XPATH, '//*[@id="cookie-consent-banner"]/div/div[2]/div/form/button')
 cookies.click()
 
+#Creating list of links
 linki_do_zawodnikow = driver.find_elements(By.CSS_SELECTOR, ("a[href*='/reprezentacja/pilkarze/']"))
 for link in linki_do_zawodnikow:
 href1 = link.get_attribute("href")
@@ -56,7 +58,7 @@ matches = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2
 goals = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[4]/td[2]')
 minutes = driver.find_elements(By.XPATH, '//*[@id="player-profile"]/div[3]/div[2]/section[3]/table/tbody/tr[1]/td[2]')
 
-
+#Creating list
 for i in range(len(players)):
 imie_nazwisko.append(players[i].text)
 try:
